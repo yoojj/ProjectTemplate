@@ -12,8 +12,9 @@ public class CustomApplication implements WebServerFactoryCustomizer<TomcatServl
 	@Override
 	public void customize(TomcatServletWebServerFactory factory) {	
 		factory.setPort(8000);
-        factory.setContextPath("/");
-        factory.addErrorPages(new ErrorPage(HttpStatus.NOT_FOUND, "/error/404"));
+		factory.setContextPath("/");
+		factory.addErrorPages(new ErrorPage(HttpStatus.NOT_FOUND, "/error/404"));
+		factory.addErrorPages(new ErrorPage(HttpStatus.BAD_REQUEST, "/error/404"));
 	}
 	
 }
